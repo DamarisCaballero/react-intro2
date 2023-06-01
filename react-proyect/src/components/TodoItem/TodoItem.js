@@ -1,16 +1,17 @@
+import { CompleteIcon } from './components/CompleteIcon/DeleteIcon'
+import { CompleteIcon } from './components/CompleteIcon/CompleteIcon'
 import "./TodoItem.css";
 
-function TodoItem({ text, completed, onComplete, onDelete }) {
+function TodoItem(props) {
     return (
-    <li className="todo-item">
-    <button
-        onClick={onComplete}
-        className={`check ${completed && "check--active"}`}
-    ></button>
-    <p>{text}</p>
-        <button onClick={onDelete} className="close-item"></button>
-    </li>
-);
-}
+    <li className="TodoItem">
+        <CompleteIcon />
+    <p className={`TodoItem-p ${props.
+    completed && "TodoIltem—p——complete"}`}>
+    {props.text}
+    </p>
 
-export { TodoItem };
+    <DeleteIcon/>
+    </li>
+    );
+}

@@ -53,14 +53,18 @@ function App() {
   );
   const completeTodo = (text) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+      );
     newTodos[todoIndex].completed = true;
     setTodos(newTodos);
   };
 
   const deleteTodo = (text) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+      );
     newTodos.splice(todoIndex, 1);
     setTodos(newTodos);
   };
@@ -69,8 +73,9 @@ function App() {
     <>
       <TodoCounter total={totalTodos} completed={completedTodos} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+   
       <TodoList>
-        {todosSearch.map((todo) => (
+        {SearchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -80,6 +85,7 @@ function App() {
           />
         ))}
       </TodoList>
+      
       <CreateTodoButton />
     </>
   );
