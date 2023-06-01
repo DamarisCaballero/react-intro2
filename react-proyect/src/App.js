@@ -73,7 +73,7 @@ function App() {
     <>
       <TodoCounter total={totalTodos} completed={completedTodos} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-   
+  
       <TodoList>
         {SearchedTodos.map((todo) => (
           <TodoItem
